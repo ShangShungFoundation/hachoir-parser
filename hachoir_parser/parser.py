@@ -88,7 +88,7 @@ class HachoirParser(object):
         if not self._mime_type:
             try:
                 self._mime_type = self.createMimeType()
-            except HACHOIR_ERRORS, err:
+            except HACHOIR_ERRORS as err:
                 self.error("Error when creating MIME type: %s" % unicode(err))
             if not self._mime_type \
             and self.createMimeType != Parser.createMimeType:
@@ -104,7 +104,7 @@ class HachoirParser(object):
         if not hasattr(self, "_content_size"):
             try:
                 self._content_size = self.createContentSize()
-            except HACHOIR_ERRORS, err:
+            except HACHOIR_ERRORS as err:
                 error("Unable to compute %s content size: %s" % (self.__class__.__name__, err))
                 self._content_size = None
         return self._content_size
