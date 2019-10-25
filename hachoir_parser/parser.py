@@ -76,7 +76,7 @@ class HachoirParser(object):
                 self._description = self.createDescription()
                 if isinstance(self._description, str):
                     self._description = makeUnicode(self._description)
-            except HACHOIR_ERRORS, err:
+            except HACHOIR_ERRORS as err:
                 error("Error getting description of %s: %s" \
                     % (self.path, unicode(err)))
                 self._description = self.PARSER_TAGS["description"]
